@@ -14,7 +14,6 @@
 - Supported languages(English, Italian, French, Portuguese, German, Spanish, Chinese)
 
 ## Technologies
-Scanner - [WeScan](https://github.com/WeTransfer/WeScan)<br/>
 OCR - [Apple Vision framework](https://developer.apple.com/documentation/vision) <br/>
 
 
