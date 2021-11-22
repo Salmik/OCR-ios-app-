@@ -6,11 +6,11 @@
 //
 
 import UIKit
-import WeScan
+import VisionKit
 
 final class DocumentsVC: UIViewController {
     
-    // MARK:- Properties
+    // MARK: - Properties
     var collectionView: UICollectionView!
     var floatingButton = FloatingButton(type: .system)
     
@@ -32,7 +32,7 @@ final class DocumentsVC: UIViewController {
     
     let emptyStateView = EmptyStateView(message: "You don't have any document!", description: "Scan or add new document by clicking the + button below and save as your required format")
     
-    // MARK:- LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -59,7 +59,7 @@ final class DocumentsVC: UIViewController {
         
     }
     
-    // MARK:- Config methods
+    // MARK: - Config methods
     private func configureSearchController() {
         navigationItem.searchController                         = searchController
         navigationItem.hidesSearchBarWhenScrolling              = false
@@ -88,16 +88,24 @@ final class DocumentsVC: UIViewController {
         
         actionSheet.addAction(UIAlertAction(title: "Scan", style: .default, handler: {[weak self] (_) in            
             guard let self = self else { return }
-            let scannerVC = ImageScannerController()
-            scannerVC.imageScannerDelegate = self
-            scannerVC.modalPresentationStyle = .fullScreen
-            self.present(scannerVC, animated: true, completion: nil)
+//            let scannerVC = ImageScannerController()
+//            scannerVC.imageScannerDelegate = self
+//            scannerVC.modalPresentationStyle = .fullScreen
+//            self.present(scannerVC, animated: true, completion: nil)
+            let scannerVC = VNDocumentCameraViewController()
+                            scannerVC.delegate = self
+                        self.present(scannerVC,animated: true, completion: nil)
             
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Import", style: .default, handler: { [weak self] (_) in
             guard let self = self else {return}
             self.chooseImageSourse(.photoLibrary)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] (_) in
+            guard let self = self else {return}
+            self.chooseImageSourse(.camera)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -118,7 +126,7 @@ final class DocumentsVC: UIViewController {
         ])
     }
 
-    // MARK:- configureCollectionView with DataSource
+    // MARK: - configureCollectionView with DataSource
     private func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createTwoColumFlowLayout(in: view))
         view.addSubview(collectionView)
@@ -130,7 +138,7 @@ final class DocumentsVC: UIViewController {
         
     }
 
-    // MARK:- UICollectionViewDelegate
+    // MARK: - UICollectionViewDelegate
     extension DocumentsVC: UICollectionViewDelegate {
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             
@@ -157,7 +165,7 @@ final class DocumentsVC: UIViewController {
         }
     }
 
-// MARK:- UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension DocumentsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isFiltered {
@@ -199,7 +207,7 @@ extension DocumentsVC: UICollectionViewDataSource {
     
 }
 
-// MARK:- UISearchBarDelegate
+// MARK: - UISearchBarDelegate
 extension DocumentsVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredDocuments(searchText)
@@ -222,25 +230,49 @@ extension DocumentsVC: UISearchResultsUpdating {
     
 }
 
-//MARK:- ImageScannerControllerDelegate
-extension DocumentsVC: ImageScannerControllerDelegate {
-    
-    func imageScannerController(_ scanner: ImageScannerController, didFinishScanningWithResults results: ImageScannerResults) {
-        
-        if results.doesUserPreferEnhancedScan {
-            scannedImage = results.enhancedScan?.image
-        } else {
-            scannedImage = results.croppedScan.image
+//MARK: - ImageScannerControllerDelegate
+//extension DocumentsVC: ImageScannerControllerDelegate {
+//
+//    func imageScannerController(_ scanner: ImageScannerController, didFinishScanningWithResults results: ImageScannerResults) {
+//
+//        if results.doesUserPreferEnhancedScan {
+//            scannedImage = results.enhancedScan?.image
+//        } else {
+//            scannedImage = results.croppedScan.image
+//        }
+//        scanner.dismiss(animated: true, completion: nil)
+//        showSaveDialog(scannedImage: scannedImage)
+//    }
+//    func imageScannerControllerDidCancel(_ scanner: ImageScannerController) {
+//        scanner.dismiss(animated: true, completion: nil)
+//    }
+//
+//    func imageScannerController(_ scanner: ImageScannerController, didFailWithError error: Error) {
+//        print(error.localizedDescription)
+//    }
+//
+
+// MARK: - VNDocumentCameraViewControllerDelegate
+extension DocumentsVC: VNDocumentCameraViewControllerDelegate {
+
+    func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
+
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else {return}
+            let img = scan.imageOfPage(at: 0)
+            self.showSaveDialog(scannedImage: img)
         }
-        scanner.dismiss(animated: true, completion: nil)
-        showSaveDialog(scannedImage: scannedImage)
+
+        controller.dismiss(animated: true, completion: nil)
+
     }
-    func imageScannerControllerDidCancel(_ scanner: ImageScannerController) {
-        scanner.dismiss(animated: true, completion: nil)
-    }
-    
-    func imageScannerController(_ scanner: ImageScannerController, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-    
+
 }

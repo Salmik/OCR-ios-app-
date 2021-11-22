@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1415352721288500365C99 /* WeScan in Frameworks */ = {isa = PBXBuildFile; productRef = AC1415342721288500365C99 /* WeScan */; };
 		AC5A4C9826D24D8100BE487C /* DocumentsVC + ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A4C9726D24D8100BE487C /* DocumentsVC + ImagePicker.swift */; };
 		AC5A4C9A26D25E5900BE487C /* DocImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A4C9926D25E5900BE487C /* DocImageVC.swift */; };
 		AC5A4C9C26D2703200BE487C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A4C9B26D2703200BE487C /* Album.swift */; };
@@ -37,12 +38,9 @@
 		ACD9FE0F26D249A20088AEA2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FE0E26D249A20088AEA2 /* SettingsTableViewCell.swift */; };
 		ACD9FE1126D249BB0088AEA2 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9FE1026D249BB0088AEA2 /* SwitchTableViewCell.swift */; };
 		ACE18F5B26D2940C006882D5 /* TextEditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE18F5A26D2940C006882D5 /* TextEditingVC.swift */; };
-		DC723AFCF44CE399BAFA0D3F /* Pods_OCR_Simple_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EC00C3F97E0979B55F8650 /* Pods_OCR_Simple_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37EC00C3F97E0979B55F8650 /* Pods_OCR_Simple_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCR_Simple_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68624C0B7EB5F16BA084E06B /* Pods-OCR Simple app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCR Simple app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCR Simple app/Pods-OCR Simple app.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5A4C9726D24D8100BE487C /* DocumentsVC + ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentsVC + ImagePicker.swift"; sourceTree = "<group>"; };
 		AC5A4C9926D25E5900BE487C /* DocImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocImageVC.swift; sourceTree = "<group>"; };
 		AC5A4C9B26D2703200BE487C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 		ACD9FE0E26D249A20088AEA2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		ACD9FE1026D249BB0088AEA2 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		ACE18F5A26D2940C006882D5 /* TextEditingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditingVC.swift; sourceTree = "<group>"; };
-		F2A9DC76529DCFB0FB9B2787 /* Pods-OCR Simple app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCR Simple app.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCR Simple app/Pods-OCR Simple app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC723AFCF44CE399BAFA0D3F /* Pods_OCR_Simple_app.framework in Frameworks */,
+				AC1415352721288500365C99 /* WeScan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,8 +126,6 @@
 			children = (
 				ACD9FDD126D240660088AEA2 /* OCR Simple app */,
 				ACD9FDD026D240660088AEA2 /* Products */,
-				AED0D9BA0BBA673D81B05C55 /* Pods */,
-				C0F4F2E95C2B0D05C82008CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,23 +253,6 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
-		AED0D9BA0BBA673D81B05C55 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				68624C0B7EB5F16BA084E06B /* Pods-OCR Simple app.debug.xcconfig */,
-				F2A9DC76529DCFB0FB9B2787 /* Pods-OCR Simple app.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C0F4F2E95C2B0D05C82008CB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				37EC00C3F97E0979B55F8650 /* Pods_OCR_Simple_app.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,17 +260,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACD9FDE326D240670088AEA2 /* Build configuration list for PBXNativeTarget "OCR Simple app" */;
 			buildPhases = (
-				921287B586A11EEF383E28B4 /* [CP] Check Pods Manifest.lock */,
 				ACD9FDCB26D240660088AEA2 /* Sources */,
 				ACD9FDCC26D240660088AEA2 /* Frameworks */,
 				ACD9FDCD26D240660088AEA2 /* Resources */,
-				1C2EB49798DC28B34E8CFA19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "OCR Simple app";
+			packageProductDependencies = (
+				AC1415342721288500365C99 /* WeScan */,
+			);
 			productName = "OCR Simple app";
 			productReference = ACD9FDCF26D240660088AEA2 /* OCR Simple app.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +299,9 @@
 				Base,
 			);
 			mainGroup = ACD9FDC626D240660088AEA2;
+			packageReferences = (
+				AC1415332721288500365C99 /* XCRemoteSwiftPackageReference "WeScan" */,
+			);
 			productRefGroup = ACD9FDD026D240660088AEA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,45 +322,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1C2EB49798DC28B34E8CFA19 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OCR Simple app/Pods-OCR Simple app-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/WeScan/WeScan.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WeScan.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCR Simple app/Pods-OCR Simple app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		921287B586A11EEF383E28B4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OCR Simple app-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACD9FDCB26D240660088AEA2 /* Sources */ = {
@@ -481,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -536,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -548,13 +491,13 @@
 		};
 		ACD9FDE426D240670088AEA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68624C0B7EB5F16BA084E06B /* Pods-OCR Simple app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YTHC5U3V42;
 				INFOPLIST_FILE = "$(SRCROOT)/OCR Simple app/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,13 +511,13 @@
 		};
 		ACD9FDE526D240670088AEA2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2A9DC76529DCFB0FB9B2787 /* Pods-OCR Simple app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YTHC5U3V42;
 				INFOPLIST_FILE = "$(SRCROOT)/OCR Simple app/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,6 +551,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC1415332721288500365C99 /* XCRemoteSwiftPackageReference "WeScan" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/WeScan";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC1415342721288500365C99 /* WeScan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC1415332721288500365C99 /* XCRemoteSwiftPackageReference "WeScan" */;
+			productName = WeScan;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACD9FDC726D240660088AEA2 /* Project object */;
 }
