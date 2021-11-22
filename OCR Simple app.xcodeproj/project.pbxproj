@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC1415352721288500365C99 /* WeScan in Frameworks */ = {isa = PBXBuildFile; productRef = AC1415342721288500365C99 /* WeScan */; };
 		AC5A4C9826D24D8100BE487C /* DocumentsVC + ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A4C9726D24D8100BE487C /* DocumentsVC + ImagePicker.swift */; };
 		AC5A4C9A26D25E5900BE487C /* DocImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A4C9926D25E5900BE487C /* DocImageVC.swift */; };
 		AC5A4C9C26D2703200BE487C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A4C9B26D2703200BE487C /* Album.swift */; };
@@ -80,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC1415352721288500365C99 /* WeScan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +268,6 @@
 			);
 			name = "OCR Simple app";
 			packageProductDependencies = (
-				AC1415342721288500365C99 /* WeScan */,
 			);
 			productName = "OCR Simple app";
 			productReference = ACD9FDCF26D240660088AEA2 /* OCR Simple app.app */;
@@ -300,7 +297,6 @@
 			);
 			mainGroup = ACD9FDC626D240660088AEA2;
 			packageReferences = (
-				AC1415332721288500365C99 /* XCRemoteSwiftPackageReference "WeScan" */,
 			);
 			productRefGroup = ACD9FDD026D240660088AEA2 /* Products */;
 			projectDirPath = "";
@@ -551,25 +547,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		AC1415332721288500365C99 /* XCRemoteSwiftPackageReference "WeScan" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WeTransfer/WeScan";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AC1415342721288500365C99 /* WeScan */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AC1415332721288500365C99 /* XCRemoteSwiftPackageReference "WeScan" */;
-			productName = WeScan;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACD9FDC726D240660088AEA2 /* Project object */;
 }
