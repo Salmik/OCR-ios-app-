@@ -11,6 +11,7 @@
 - Extract’s text from images
 - Album creating
 - Zooming images
+- Supported languages(English, Italian, French, Portuguese, German, Spanish, Chinese)
 
 ## Technologies
 Scanner - [WeScan](https://github.com/WeTransfer/WeScan)<br/>
@@ -38,6 +39,7 @@ OCR - [Apple Vision framework](https://developer.apple.com/documentation/vision)
 - [x] Album creating
 - [x] Zooming images
 - [x] Create Settings page
+- [x] Now supported more languages(English, Italian, French, Portuguese, German, Spanish, Chinese)
 - [ ] Translate feature
 - [ ] Configure Settings page
 - [ ] Handwriting OCR
